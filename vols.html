@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Reservez votre vol avec CHEFA VOYAGES depuis Dakar avec un devis WhatsApp rapide et un accompagnement premium."
+    />
+    <title>Reserver un vol | CHEFA VOYAGES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Libre+Caslon+Text:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="vols">
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+    <header class="site-header" id="top">
+      <div class="top-strip">
+        <div class="container top-strip-inner">
+          <p>Dakar, Senegal</p>
+          <div class="top-strip-links">
+            <a href="tel:+221776443484">+221 77 644 34 84</a>
+            <a
+              href="https://wa.me/221776443484?text=Bonjour%20CHEFA%20VOYAGES%2C%20je%20souhaite%20avoir%20un%20devis%20pour%20un%20billet%20d%27avion."
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container header-main">
+        <a class="brand" href="/" aria-label="CHEFA VOYAGES - Retour a l'accueil">
+          <img src="assets/chefa-voyages-logo.jpeg" alt="Logo CHEFA VOYAGES" />
+          <span class="brand-copy">
+            <strong>CHEFA VOYAGES</strong>
+            <small>Agence voyage premium</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Ouvrir le menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="site-nav" aria-label="Navigation principale">
+          <a data-nav="accueil" href="/">Accueil</a>
+          <a data-nav="vols" href="/vols">Reserver un vol</a>
+          <a data-nav="services" href="/services">Services</a>
+          <a data-nav="destinations" href="/destinations">Destinations</a>
+          <a data-nav="offres" href="/offres">Offres</a>
+          <a data-nav="a-propos" href="/a-propos">A propos</a>
+          <a data-nav="contact" href="/contact">Contact</a>
+        </nav>
+
+        <a class="button button-primary header-cta" href="/contact">Demander un devis</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero page-hero-flights">
+        <div class="page-hero-backdrop"></div>
+        <div class="container page-hero-content">
+          <div data-reveal>
+            <p class="eyebrow">Reserver un vol</p>
+            <h1>Preparez votre demande de billet avec un format clair et exploitable.</h1>
+            <p class="lead">
+              Depuis Dakar, CHEFA VOYAGES traite vos demandes vers Dubai,
+              l'Europe et l'Afrique avec un suivi rapide sur WhatsApp.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container">
+          <form
+            class="booking-shell"
+            data-booking-form
+            data-submit-mode="prefill"
+            data-target-form="vols-quote-form"
+          >
+            <div class="booking-top">
+              <div class="trip-switch" role="tablist" aria-label="Type de trajet">
+                <button
+                  class="trip-option is-active"
+                  type="button"
+                  data-trip="roundtrip"
+                  aria-pressed="true"
+                >
+                  Aller-retour
+                </button>
+                <button
+                  class="trip-option"
+                  type="button"
+                  data-trip="oneway"
+                  aria-pressed="false"
+                >
+                  Aller simple
+                </button>
+              </div>
+              <p>
+                Saisissez votre trajet. Nous pre-remplirons ensuite le devis detaille ci-dessous.
+              </p>
+            </div>
+
+            <input type="hidden" name="trip_type" value="roundtrip" />
+
+            <div class="booking-grid">
+              <label class="field field-large">
+                <span>Depart</span>
+                <input type="text" name="departure" placeholder="Ex: Dakar" required />
+              </label>
+              <label class="field field-large">
+                <span>Destination</span>
+                <input type="text" name="destination" placeholder="Ex: Dubai" required />
+              </label>
+              <label class="field">
+                <span>Date depart</span>
+                <input type="date" name="depart_date" required />
+              </label>
+              <label class="field return-field">
+                <span>Date retour</span>
+                <input type="date" name="return_date" />
+              </label>
+              <label class="field">
+                <span>Passagers</span>
+                <select name="passengers">
+                  <option value="1">1 passager</option>
+                  <option value="2">2 passagers</option>
+                  <option value="3">3 passagers</option>
+                  <option value="4">4 passagers</option>
+                  <option value="5+">5 passagers et +</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Classe</span>
+                <select name="travel_class">
+                  <option value="Economique">Economique</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Affaires">Affaires</option>
+                  <option value="Premiere">Premiere</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="booking-submit">
+              <button class="button button-primary" type="submit">Rechercher</button>
+              <p class="form-note" data-booking-feedback>
+                Le formulaire de devis detaille sera complete automatiquement.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">Trajets frequents</p>
+            <h2>Des itineraire souvent demandes au depart de Dakar.</h2>
+            <p>
+              Ces exemples servent de base pour vos demandes de prix et de disponibilite.
+            </p>
+          </div>
+
+          <div class="route-grid">
+            <article class="route-panel" data-reveal>
+              <span>Dubai</span>
+              <h3>Dakar - Dubai</h3>
+              <p>Loisirs, shopping, affaires et courts sejours premium.</p>
+            </article>
+            <article class="route-panel" data-reveal>
+              <span>France</span>
+              <h3>Dakar - Paris</h3>
+              <p>Voyages famille, etudes, correspondances et rendez-vous pros.</p>
+            </article>
+            <article class="route-panel" data-reveal>
+              <span>Belgique</span>
+              <h3>Dakar - Bruxelles</h3>
+              <p>Acces pratique a l'Europe avec options regulieres et flexibles.</p>
+            </article>
+            <article class="route-panel" data-reveal>
+              <span>Cote d'Ivoire</span>
+              <h3>Dakar - Abidjan</h3>
+              <p>Flux regional rapide pour le business et les deplacements courts.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container two-column">
+          <div data-reveal>
+            <p class="eyebrow">Pourquoi CHEFA VOYAGES</p>
+            <h2>Un traitement plus humain qu'un simple moteur de reservation.</h2>
+            <p class="lead body-dark">
+              Nous adaptons la proposition aux horaires souhaites, aux bagages,
+              au niveau de confort et aux contraintes du voyageur.
+            </p>
+          </div>
+
+          <div class="checklist-card" data-reveal>
+            <ul class="checklist">
+              <li>Reponse rapide sur WhatsApp</li>
+              <li>Lecture claire des options de vol</li>
+              <li>Prise en compte des contraintes visa et correspondances</li>
+              <li>Support adapte aux voyages famille ou entreprise</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-layout">
+          <div class="contact-layout-copy" data-reveal>
+            <p class="eyebrow">Devis detaille</p>
+            <h2>Finalisez votre demande et ouvrez la conversation WhatsApp.</h2>
+            <p>
+              Remplissez vos coordonnees pour que CHEFA VOYAGES puisse vous
+              repondre avec une proposition adaptee a votre projet de voyage.
+            </p>
+          </div>
+
+          <form class="quote-form" id="vols-quote-form" data-quote-form data-reveal>
+            <input type="hidden" name="trip_type" value="roundtrip" />
+
+            <div class="quote-grid">
+              <label class="field">
+                <span>Nom complet</span>
+                <input type="text" name="name" placeholder="Votre nom" required />
+              </label>
+              <label class="field">
+                <span>Telephone</span>
+                <input type="tel" name="phone" placeholder="+221 XX XXX XX XX" required />
+              </label>
+              <label class="field">
+                <span>Depart</span>
+                <input type="text" name="departure" placeholder="Ex: Dakar" required />
+              </label>
+              <label class="field">
+                <span>Destination</span>
+                <input type="text" name="destination" placeholder="Ex: Dubai" required />
+              </label>
+              <label class="field">
+                <span>Date depart</span>
+                <input type="date" name="depart_date" required />
+              </label>
+              <label class="field">
+                <span>Date retour</span>
+                <input type="date" name="return_date" />
+              </label>
+              <label class="field">
+                <span>Passagers</span>
+                <select name="passengers">
+                  <option value="1">1 passager</option>
+                  <option value="2">2 passagers</option>
+                  <option value="3">3 passagers</option>
+                  <option value="4">4 passagers</option>
+                  <option value="5+">5 passagers et +</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Classe</span>
+                <select name="travel_class">
+                  <option value="Economique">Economique</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Affaires">Affaires</option>
+                  <option value="Premiere">Premiere</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field field-full">
+              <span>Message</span>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Precisez vos preferences, horaires, bagages ou besoins particuliers."
+              ></textarea>
+            </label>
+
+            <div class="quote-submit">
+              <button class="button button-primary" type="submit">Envoyer via WhatsApp</button>
+              <p class="form-note" data-quote-feedback>
+                La conversation WhatsApp s'ouvrira avec votre demande pre-remplie.
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-block">
+          <a class="brand brand-footer" href="/">
+            <img src="assets/chefa-voyages-logo.jpeg" alt="Logo CHEFA VOYAGES" />
+            <span class="brand-copy">
+              <strong>CHEFA VOYAGES</strong>
+              <small>Depuis Dakar, Senegal</small>
+            </span>
+          </a>
+          <p>
+            Agence de voyage premium pour billets d'avion, hotels, visas,
+            voyages d'affaires, omra et demandes de devis WhatsApp.
+          </p>
+        </div>
+
+        <div>
+          <h3>Reserver</h3>
+          <ul>
+            <li><a href="/vols">Reserver un vol</a></li>
+            <li><a href="/contact">Demander un devis</a></li>
+            <li><a href="/offres">Offres speciales</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+          <ul>
+            <li><a href="/services">Billets internationaux</a></li>
+            <li><a href="/services">Reservation d'hotels</a></li>
+            <li><a href="/services">Assistance visa</a></li>
+            <li><a href="/services">Omra et pelerinage</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>Dakar, Senegal</li>
+            <li><a href="tel:+221776443484">+221 77 644 34 84</a></li>
+            <li>
+              <a
+                href="https://wa.me/221776443484?text=Bonjour%20CHEFA%20VOYAGES%2C%20je%20souhaite%20avoir%20un%20devis%20pour%20un%20billet%20d%27avion."
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ouvrir WhatsApp
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; <span data-year></span> CHEFA VOYAGES. Tous droits reserves.</p>
+        <div class="footer-bottom-links">
+          <a href="/contact">Contact</a>
+          <a href="/a-propos">A propos</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/221776443484?text=Bonjour%20CHEFA%20VOYAGES%2C%20je%20souhaite%20avoir%20un%20devis%20pour%20un%20billet%20d%27avion."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Contacter CHEFA VOYAGES sur WhatsApp"
+    >
+      <span>WhatsApp</span>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
