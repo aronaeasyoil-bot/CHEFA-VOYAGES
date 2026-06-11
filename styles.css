@@ -667,6 +667,70 @@ p {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.metrics-section {
+  padding-top: 0;
+}
+
+.metrics-shell {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.4rem;
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 24%),
+    linear-gradient(135deg, var(--navy-980), var(--navy-820));
+  box-shadow: var(--shadow-soft);
+}
+
+.metrics-heading h2 {
+  color: var(--white);
+  font-size: clamp(2.15rem, 4vw, 3.7rem);
+  margin-bottom: 1rem;
+}
+
+.metrics-heading p:last-child {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.8;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  min-height: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.metric-value {
+  color: var(--white);
+  font-family: "Libre Caslon Text", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-label {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.55;
+}
+
 .support-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1330,6 +1394,7 @@ p {
 .offer-card,
 .destination-panel,
 .media-frame,
+.metric-card,
 .stat-card,
 .showcase-card {
   transition:
@@ -1357,6 +1422,7 @@ p {
   .offer-card:hover,
   .destination-panel:hover,
   .media-frame:hover,
+  .metric-card:hover,
   .stat-card:hover,
   .showcase-card:hover {
     transform: translateY(-6px);
@@ -1375,10 +1441,12 @@ p {
   }
 
   .editorial-layout,
+  .metrics-shell,
   .showcase-band {
     grid-template-columns: 1fr;
   }
 
+  .metrics-grid,
   .fare-grid,
   .route-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1456,6 +1524,7 @@ p {
 
   .hero-home-content,
   .support-grid,
+  .metrics-shell,
   .two-column,
   .contact-layout,
   .editorial-layout,
@@ -1549,6 +1618,8 @@ p {
   .booking-shell,
   .quote-form,
   .support-panel,
+  .metrics-shell,
+  .metric-card,
   .info-card,
   .fare-card,
   .promo-card,
@@ -1578,6 +1649,7 @@ p {
 
   .booking-grid,
   .quote-grid,
+  .metrics-grid,
   .fare-grid,
   .service-grid,
   .service-grid-full,
@@ -1608,6 +1680,10 @@ p {
   .hero-points li {
     width: 100%;
     border-radius: var(--radius-sm);
+  }
+
+  .metric-card {
+    min-height: auto;
   }
 
   .whatsapp-float {

@@ -4,6 +4,7 @@ const siteHeader = document.querySelector(".site-header");
 const revealItems = document.querySelectorAll("[data-reveal]");
 const navLinks = document.querySelectorAll(".primary-nav a[data-nav]");
 const yearNodes = document.querySelectorAll("[data-year]");
+const counterNodes = document.querySelectorAll("[data-counter-target]");
 
 const whatsappNumber = "221776443484";
 const defaultWhatsappText =
@@ -380,6 +381,67 @@ const setupRevealAnimations = () => {
   revealItems.forEach((item) => observer.observe(item));
 };
 
+const setCounterValue = (node, value) => {
+  const suffix = node.dataset.counterSuffix || "";
+  const formatter = new Intl.NumberFormat("fr-FR");
+  node.textContent = `${formatter.format(value)}${suffix}`;
+};
+
+const animateCounter = (node) => {
+  const target = Number(node.dataset.counterTarget || "0");
+  const duration = Number(node.dataset.counterDuration || "1800");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    setCounterValue(node, target);
+    return;
+  }
+
+  const startTime = performance.now();
+
+  const updateValue = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+    const currentValue = Math.round(target * easedProgress);
+
+    setCounterValue(node, currentValue);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(updateValue);
+    }
+  };
+
+  window.requestAnimationFrame(updateValue);
+};
+
+const setupCounterAnimations = () => {
+  if (counterNodes.length === 0) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const node = entry.target;
+        if (!node.dataset.counterAnimated) {
+          node.dataset.counterAnimated = "true";
+          animateCounter(node);
+        }
+
+        observer.unobserve(node);
+      });
+    },
+    { threshold: 0.45 }
+  );
+
+  counterNodes.forEach((node) => observer.observe(node));
+};
+
 setActiveNavigation();
 setupMenu();
 toggleHeaderState();
@@ -389,3 +451,4 @@ setupBookingForms();
 setupQuoteForms();
 prefillQuoteFormsFromQuery();
 setupRevealAnimations();
+setupCounterAnimations();
