@@ -707,9 +707,16 @@ p {
   margin-bottom: 1rem;
 }
 
-.metrics-heading p:last-child {
-  color: rgba(255, 255, 255, 0.78);
+.metrics-heading p:not(.eyebrow) {
+  max-width: 40rem;
+  color: rgba(255, 255, 255, 0.88);
   line-height: 1.8;
+}
+
+.metrics-heading p:last-child {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 600;
 }
 
 .metrics-grid {
@@ -1002,10 +1009,15 @@ p {
   object-position: center top;
 }
 
+.card-visual-followup img {
+  object-position: center 34%;
+}
+
 .media-grid,
 .media-triptych {
   display: grid;
   gap: 1rem;
+  align-items: start;
 }
 
 .media-grid {
@@ -1042,7 +1054,25 @@ p {
   object-position: center top;
 }
 
+.media-frame-story {
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(180deg, #eef5ff, #ffffff);
+}
+
+.media-frame-story::after {
+  background: none;
+}
+
+.media-frame-story img {
+  object-fit: contain;
+  object-position: center top;
+  padding: 0;
+}
+
 .media-frame-ticket {
+  min-height: 0;
+  aspect-ratio: 1 / 1;
   background: linear-gradient(180deg, #eef5ff, #ffffff);
 }
 
@@ -1694,7 +1724,11 @@ p {
 
 @media (max-width: 720px) {
   .section {
-    padding: 4.5rem 0;
+    padding: 2.75rem 0;
+  }
+
+  .section-tight {
+    padding: 1.5rem 0;
   }
 
   .hero-home-content,
@@ -1703,7 +1737,11 @@ p {
   }
 
   .hero-home-content {
-    padding-bottom: 13.5rem;
+    padding-bottom: 9.5rem;
+  }
+
+  .booking-overlap {
+    margin-top: -5rem;
   }
 
   .hero-copy h1,
@@ -1718,6 +1756,10 @@ p {
 
   .hero-copy h1 {
     max-width: 100%;
+  }
+
+  .section-heading {
+    margin-bottom: 1.35rem;
   }
 
   .hero-inline-visual {
