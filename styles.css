@@ -397,6 +397,24 @@ p {
   margin-bottom: 1.2rem;
 }
 
+.hero-inline-visual {
+  width: min(100%, 36rem);
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 54px rgba(5, 16, 38, 0.28);
+}
+
+.hero-inline-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -849,10 +867,27 @@ p {
     linear-gradient(135deg, var(--navy-940), var(--navy-740));
 }
 
+.promo-business {
+  background:
+    linear-gradient(180deg, rgba(6, 18, 42, 0.18), rgba(6, 18, 42, 0.82)),
+    url("assets/hero-airport-premium-ai.png") center/cover no-repeat;
+}
+
+.promo-guided {
+  color: var(--white);
+  background:
+    linear-gradient(180deg, rgba(6, 18, 42, 0.16), rgba(6, 18, 42, 0.84)),
+    url("assets/voyages-accompagnes-premium-ai.png") center/cover no-repeat;
+}
+
 .promo-card-dark p,
 .promo-card-dark h3,
 .promo-card-dark .promo-label,
 .promo-card-dark .text-link,
+.promo-guided p,
+.promo-guided h3,
+.promo-guided .promo-label,
+.promo-guided .text-link,
 .offer-card-dark p,
 .offer-card-dark .promo-label,
 .offer-card-dark .text-link {
@@ -915,6 +950,12 @@ p {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 247, 251, 0.98));
 }
 
+.stat-card.stat-card-illustrated,
+.fare-card.fare-card-illustrated {
+  overflow: hidden;
+  padding: 0;
+}
+
 .stat-card strong {
   display: block;
   margin-bottom: 0.35rem;
@@ -925,6 +966,40 @@ p {
 .stat-card span {
   color: var(--ink-700);
   line-height: 1.65;
+}
+
+.stat-card-body,
+.fare-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem;
+}
+
+.fare-card-body {
+  height: 100%;
+}
+
+.fare-card-body .text-link {
+  margin-top: auto;
+}
+
+.card-visual {
+  min-height: 11rem;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #edf5fd, #ffffff);
+}
+
+.card-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card-visual-agency img {
+  object-position: center top;
 }
 
 .media-grid,
@@ -963,6 +1038,31 @@ p {
   transition: transform 700ms ease;
 }
 
+.media-frame-agency img {
+  object-position: center top;
+}
+
+.media-frame-ticket {
+  background: linear-gradient(180deg, #eef5ff, #ffffff);
+}
+
+.media-frame-ticket img {
+  object-fit: contain;
+  object-position: center;
+  padding: 1rem;
+}
+
+.support-visual {
+  min-height: 23rem;
+  background: linear-gradient(180deg, #ebf6ff, #ffffff);
+}
+
+.support-visual img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.9rem;
+}
+
 .media-frame-large {
   min-height: 28rem;
 }
@@ -986,6 +1086,11 @@ p {
   font-size: 0.9rem;
   font-weight: 700;
   backdrop-filter: blur(10px);
+}
+
+.media-caption-top {
+  top: 1.2rem;
+  bottom: auto;
 }
 
 .showcase-band {
@@ -1613,6 +1718,15 @@ p {
 
   .hero-copy h1 {
     max-width: 100%;
+  }
+
+  .hero-inline-visual {
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-inline-visual img {
+    aspect-ratio: 4 / 3;
   }
 
   .booking-shell,
